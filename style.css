@@ -1,0 +1,4 @@
+/* Match the main site's button radius (4px) */
+#topbar-cta-button .rounded-xl {
+  border-radius: 4px !important;
+}
