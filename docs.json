@@ -1,72 +1,80 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
-  "name": "Mintlify Starter Kit",
+  "name": "do good things",
+  "description": "How we work with clients: the growth system, timelines, engagement models, and what we need from you.",
   "colors": {
-    "primary": "#16A34A",
-    "light": "#07C983",
-    "dark": "#15803D"
+    "primary": "#ef5a2a",
+    "light": "#ef5a2a",
+    "dark": "#ef5a2a"
+  },
+  "appearance": {
+    "default": "dark",
+    "strict": true
+  },
+  "background": {
+    "color": {
+      "dark": "#091414"
+    }
   },
   "favicon": "/favicon.svg",
   "navigation": {
-    "pages": [
+    "groups": [
       {
-        "group": "Getting Started",
+        "group": "Overview",
         "pages": [
           "index",
-          "quickstart"
+          "how-it-works",
+          "the-audit",
+          "engagements-pricing",
+          "faq"
+        ]
+      },
+      {
+        "group": "The System",
+        "pages": [
+          "system/data-attribution",
+          "system/performance-creative",
+          "system/paid-ads",
+          "system/ai-search-seo",
+          "system/conversion-email",
+          "system/ai-workflows"
+        ]
+      },
+      {
+        "group": "Client Guide",
+        "pages": [
+          "guide/client-guide",
+          "guide/getting-started",
+          "guide/kickoff",
+          "guide/operating-rhythm",
+          "guide/feedback-comms",
+          "guide/common-pitfalls"
         ]
       }
-    ],
-    "global": {
-      "anchors": [
-        {
-          "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
-          "icon": "book-open-cover"
-        },
-        {
-          "anchor": "Blog",
-          "href": "https://mintlify.com/blog",
-          "icon": "newspaper"
-        }
-      ]
-    }
+    ]
   },
   "logo": {
-    "light": "/logo/light.svg",
-    "dark": "/logo/dark.svg"
+    "light": "/logo/dark.svg",
+    "dark": "/logo/light.svg",
+    "href": "https://dogoodthings.co.nz"
   },
   "navbar": {
     "links": [
       {
-        "label": "Support",
-        "href": "mailto:hi@mintlify.com"
+        "label": "Main",
+        "href": "https://dogoodthings.co.nz"
       }
     ],
     "primary": {
       "type": "button",
-      "label": "Dashboard",
-      "href": "https://app.mintlify.com"
+      "label": "Start a convo",
+      "href": "https://dogoodthings.co.nz/contact"
     }
-  },
-  "contextual": {
-    "options": [
-      "copy",
-      "view",
-      "chatgpt",
-      "claude",
-      "perplexity",
-      "mcp",
-      "cursor",
-      "vscode"
-    ]
   },
   "footer": {
     "socials": {
-      "x": "https://x.com/mintlify",
-      "github": "https://github.com/mintlify",
-      "linkedin": "https://linkedin.com/company/mintlify"
+      "website": "https://dogoodthings.co.nz"
     }
   }
 }
