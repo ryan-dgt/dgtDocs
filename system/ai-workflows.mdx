@@ -1,6 +1,6 @@
 ---
 title: "Agentic AI workflows"
-description: "Agents handle the repeatable middle of growth work. Senior humans spend their hours on judgement."
+description: "What AI-backed means in practice: agents built on Claude Code handle research, reporting, monitoring, and drafting, while humans make every publish, send, and budget decision."
 icon: "robot"
 ---
 
@@ -22,7 +22,7 @@ Then the part that matters. A human creative strategist reviews the ranked queue
 
 **The playbooks live in a Git repository, and that repository *is* the system.** Every skill, workflow, schedule, and piece of configuration is a file in a version-controlled repo, the same discipline software teams use for production code. A change only takes effect once it's reviewed and pushed, and the history shows exactly what changed, when, and why. When a scheduled run fires, it runs whatever the repo says and nothing else. So when we say everything is documented, it's not a binder that drifts out of date: the documentation and the system are the same files.
 
-**Small scheduled programs handle the plumbing.** Cloudflare Workers, lightweight programs that run in the cloud on a schedule, do the pulling and the triggering: fetching spend and performance data from the ad platforms, refreshing the [growth sheet](/system/data-attribution#the-growth-sheet)'s inputs, kicking off the morning anomaly checks, and raising an alert the moment something crosses a threshold. They run under your access grants, they're inexpensive, and they're boring, which is exactly what you want from plumbing.
+**Small scheduled programs handle the plumbing.** Cloudflare Workers, lightweight programs that run in the cloud on a schedule, do the pulling and the triggering: fetching spend and performance data from the ad platforms, refreshing the [growth sheet](/system/data-attribution#what-is-the-growth-sheet)'s inputs, kicking off the morning anomaly checks, and raising an alert the moment something crosses a threshold. They run under your access grants, they're inexpensive, and they're boring, which is exactly what you want from plumbing.
 
 **Creative volume comes from generation tools, briefed by the account.** For statics and short video, we use Higgsfield and other ad-generation models to produce the draft volume: fresh executions of ad structures that have already proven themselves, briefed by the agents from what your account just taught us. What comes out is a ranked queue of candidates, never a live ad. The ship-or-reject call stays with a human, as above.
 
