@@ -15,25 +15,25 @@ A small senior team plus well-built automation covers what used to take a ten-pe
 
 Every week the account generates learnings: which angles won, which hooks died, which audiences leaned in. Turning those learnings into new creative used to mean a designer spending hours on draft after draft. Here, our systems do that legwork: new statics, angles, and concept variations generated off the back of what the account just taught us, assembled against proven ad structures and ranked by likelihood of winning.
 
-Then the part that matters. A human creative strategist reviews the ranked queue and makes the call: ship it, or reject it with a reason. Every yes and no gets captured and fed back in, so the pipeline gets sharper every week. AI does the volume, a senior human does the judgement. That pattern, drafting at scale and deciding by hand, is how every workflow here is built.
+Then a human creative strategist reviews the ranked queue and makes the call on each one: ship it, or reject it with a reason. Every yes and no gets captured and fed back in, so the pipeline gets sharper every week. Drafting at scale, deciding by hand: that pattern is how every workflow here is built.
 
 ## Under the hood: what's actually running
 
 **Every workflow starts as a written playbook.** We build on Claude Code, Anthropic's agent platform. Each job an agent does, whether that's reading reviews at depth, compiling the weekly report, or briefing new statics, is written up as a *skill*: a plain-English instruction file that spells out what data to pull, what to produce, what good looks like, and what it must never touch. That's a useful forcing function, too. If we can't write a job down clearly enough to make a skill of it, it isn't understood well enough to automate, and it stays with a human.
 
-**The playbooks live in a Git repository, and that repository *is* the system.** Every skill, workflow, schedule, and piece of configuration is a file in a version-controlled repo, the same discipline software teams use for production code. A change only takes effect once it's reviewed and pushed, and the history shows exactly what changed, when, and why. When a scheduled run fires, it runs whatever the repo says and nothing else. So when we say everything is documented, it's not a binder that drifts out of date: the documentation and the system are the same files.
+**The playbooks live in a Git repository, and that repository *is* the system.** Every skill, workflow, schedule, and piece of configuration is a file in a version-controlled repo, the same discipline software teams use for production code. A change only takes effect once it's reviewed and pushed, and the history shows exactly what changed, when, and why. When a scheduled run fires, it runs whatever the repo says and nothing else. So when we say everything is documented, we mean the documentation and the system are the same files. There's no binder sitting alongside it, drifting out of date.
 
 **Small scheduled programs handle the plumbing.** Cloudflare Workers, lightweight programs that run in the cloud on a schedule, do the pulling and the triggering: fetching spend and performance data from the ad platforms, refreshing the [growth sheet](/system/data-attribution#what-is-the-growth-sheet)'s inputs, kicking off the morning anomaly checks, and raising an alert the moment something crosses a threshold. They run under your access grants, they're inexpensive, and they're boring, which is exactly what you want from plumbing.
 
 **Creative volume comes from generation tools, briefed by the account.** For statics and short video, we use Higgsfield and other ad-generation models to produce the draft volume: fresh executions of ad structures that have already proven themselves, briefed by the agents from what your account just taught us. What comes out is a ranked queue of candidates, never a live ad. The ship-or-reject call stays with a human, as above.
 
-All of this makes the system software, not one person's habits. It's written down, versioned, and testable, so it survives staff changes on either side. And because it's files in a repo rather than knowledge in someone's head, it moves with you. It's part of what you own.
+All of this makes the system a piece of software rather than one person's habits. It's written down, versioned, and testable, so it survives staff changes on either side, and because it's files in a repo rather than knowledge in someone's head, it moves with you.
 
 ## Where else the agents work
 
 - **Research at depth.** Thousands of reviews, competitor ads, sales call transcripts, and community threads are read for the angles and objections a human skim would miss. This is the raw material of the creative strategy.
 - **Monitoring & alerts.** Daily anomaly checks across spend, cost per customer, tracking health, and the performance metrics we've agreed to own, so problems get caught in hours, not at month-end.
-- **Reporting compiled, not assembled.** The [weekly update](/guide/operating-rhythm) and the growth sheet's inputs are compiled by agents from live sources, so human time goes into the 'so what' instead of the copy-paste.
+- **Reporting compiled from live sources.** Agents pull together the [weekly update](/guide/operating-rhythm) and the growth sheet's inputs, so human time goes into the 'so what' instead of the copy-paste.
 - **Keeping the funnel in step.** When a new ad angle goes live, matching landing page and email variants get drafted from copy that has already proven itself. A human edits and approves before anything ships; the system keeps the whole chain telling the same story.
 
 ## The rules we run them under
@@ -45,5 +45,5 @@ All of this makes the system software, not one person's habits. It's written dow
 <Info>
 **Where this shows up in these docs**
 
-You'll see the agent layer referenced in [performance creative](/system/performance-creative) for research and iteration, [paid ads](/system/paid-ads) for monitoring, and the [operating rhythm](/guide/operating-rhythm) for reporting. It's infrastructure, not a gimmick, which is why it gets one page.
+You'll see the agent layer referenced in [performance creative](/system/performance-creative) for research and iteration, [paid ads](/system/paid-ads) for monitoring, and the [operating rhythm](/guide/operating-rhythm) for reporting. It's infrastructure, so we've given it one page here rather than sprinkling AI through all the others.
 </Info>
