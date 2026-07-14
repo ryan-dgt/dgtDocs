@@ -9,7 +9,7 @@ This is the AI-backed part of the system. Agents handle the repeatable middle of
 
 ## Why it matters to you
 
-A small senior team plus well-built automation covers what used to take a ten-person agency, without the overhead, the handoffs, or the B-team. In practice it means every angle ships with research behind it that would take a person weeks to read, and the account gets checked every morning whether or not anyone has a meeting.
+A small senior team plus well-built automation covers what used to take a ten-person agency, without the overhead, the handoffs, or the B-team. In practice it means every angle ships with research behind it that would take a person weeks to read, and the account gets checked every morning.
 
 ## A worked example: account learnings become next month's creative
 
@@ -19,9 +19,9 @@ Then a human creative strategist reviews the ranked queue and makes the call on 
 
 ## Under the hood: what's actually running
 
-**Every workflow starts as a written playbook.** We build on Claude Code, Anthropic's agent platform. Each job an agent does, whether that's reading reviews at depth, compiling the weekly report, or briefing new statics, is written up as a *skill*: a plain-English instruction file that spells out what data to pull, what to produce, what good looks like, and what it must never touch. That's a useful forcing function, too. If we can't write a job down clearly enough to make a skill of it, it isn't understood well enough to automate, and it stays with a human.
+**Every workflow starts as a written playbook.** We build on Claude Code, Anthropic's agent platform. Each job an agent does, whether that's reading reviews at depth, compiling the weekly report, or briefing new statics, is written up as a _skill_: a plain-English instruction file that spells out what data to pull, what to produce, what good looks like, and what it must never touch. That's a useful forcing function, too. If we can't write a job down clearly enough to make a skill of it, it isn't understood well enough to automate, and it stays with a human.
 
-**The playbooks live in a Git repository, and that repository *is* the system.** Every skill, workflow, schedule, and piece of configuration is a file in a version-controlled repo, the same discipline software teams use for production code. A change only takes effect once it's reviewed and pushed, and the history shows exactly what changed, when, and why. When a scheduled run fires, it runs whatever the repo says and nothing else. So when we say everything is documented, we mean the documentation and the system are the same files. There's no binder sitting alongside it, drifting out of date.
+**The playbooks live in a Git repository, and that repository _is_ the system.** Every skill, workflow, schedule, and piece of configuration is a file in a version-controlled repo, the same discipline software teams use for production code. A change only takes effect once it's reviewed and pushed, and the history shows exactly what changed, when, and why. When a scheduled run fires, it runs whatever the repo says and nothing else. So when we say everything is documented, we mean the documentation and the system are the same files. There's no binder sitting alongside it, drifting out of date.
 
 **Small scheduled programs handle the plumbing.** Cloudflare Workers, lightweight programs that run in the cloud on a schedule, do the pulling and the triggering: fetching spend and performance data from the ad platforms, refreshing the [growth sheet](/system/data-attribution#what-is-the-growth-sheet)'s inputs, kicking off the morning anomaly checks, and raising an alert the moment something crosses a threshold. They run under your access grants, they're inexpensive, and they're boring, which is exactly what you want from plumbing.
 
@@ -43,7 +43,7 @@ All of this makes the system a piece of software rather than one person's habits
 - **Everything is documented.** Each workflow is written down in your operations doc, covering what it does, what it touches, and how to switch it off. It's part of what you own.
 
 <Info>
-**Where this shows up in these docs**
+  **Where this shows up in these docs**
 
-You'll see the agent layer referenced in [performance creative](/system/performance-creative) for research and iteration, [paid ads](/system/paid-ads) for monitoring, and the [operating rhythm](/guide/operating-rhythm) for reporting. It's infrastructure, so we've given it one page here rather than sprinkling AI through all the others.
+  You'll see the agent layer referenced in [performance creative](/system/performance-creative) for research and iteration, [paid ads](/system/paid-ads) for monitoring, and the [operating rhythm](/guide/operating-rhythm) for reporting. It's infrastructure, so we've given it one page here rather than sprinkling AI through all the others.
 </Info>
