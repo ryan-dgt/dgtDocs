@@ -79,5 +79,10 @@
     "socials": {
       "website": "https://dogoodthings.co.nz"
     }
+  },
+  "integrations": {
+    "ga4": {
+      "measurementId": "G-8LFLNLBFHZ"
+    }
   }
 }
